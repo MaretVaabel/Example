@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>E-pood</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Hello!
-Olen sees
-    <p id="number">0</p>
-    <button id="liida" type="button">+</button>
-    <button id="lahuta" type="button">-</button>
-    <button id="tühista" type="reset">Reset</button>
+    <div class="container">
+      <h1>Minu E-pood</h1>
 
-    <h1>"Div Clicked?" Exercise</h1>
+      <!-- Toote valik -->
+      <div class="products">
+        <div class="product" id="product1">
+          <h2>Arvuti</h2>
+          <p>Hind: 1000€</p>
+          <button onclick="addToCart('Arvuti', 1000, 1)">Lisa ostukorvi</button>
+        </div>
+        <div class="product" id="product2">
+          <h2>Telefon</h2>
+          <p>Hind: 600€</p>
+          <button onclick="addToCart('Telefon', 600, 1)">Lisa ostukorvi</button>
+        </div>
+        <div class="product" id="product3">
+          <h2>Kõrvaklapid</h2>
+          <p>Hind: 100€</p>
+          <button type="button" onclick="addToCart('Kõrvaklapid', 100, 1)">
+            Lisa ostukorvi
+          </button>
+        </div>
+      </div>
 
-    <div>Div 1</div>
-
-    <p>This is a paragraph.</p>
-
-    <div>
-      Div 2
-      <button>A button</button>
+      <!-- Ostukorv -->
+      <div class="cart">
+        <h2>Ostukorv</h2>
+        <ul id="cartItems"></ul>
+        <p>Kogusumma: <span id="totalPrice">0</span>€</p>
+        <button onclick="emptyCart();">Tühjenda ostukorv</button>
+      </div>
     </div>
 
-    <p>This is another paragraph.</p>
-
-    <div>
-      Div 3
-      <h2>A sub-heading</h2>
-      <p>This is yet another paragraph with a <span>span inside it</span>.</p>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th id="name" scope="col">Name</th>
-          <th id="price" scope="col">Price</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <!-- <script src="script.js"></script> -->
-    <!--  <script src="calculator.js"></script>  -->
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
